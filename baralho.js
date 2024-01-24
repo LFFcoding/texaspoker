@@ -72,23 +72,29 @@ function darCartas(deck, players) {
 
     //até aqui já está funcionando
     console.log("pre-deck: ", deckList);
-    for (let i = 0; i < 2; i++) {
-        for (p in pl) {
-            let cIdx = pickOne((deckList.length - 1));
-            d[deckList.indexOf(deckList[cIdx])].userId = pl[p].id;
-            d[deckList.indexOf(deckList[cIdx])].inDeck = false;
+    //distribuir cartas aos players
+    for (p in pl) {
+        for (let i = 0; i < 2; i++) {
+            let cIdx = pickOne(deckList.length - 1);
+            console.log('cIdx:', cIdx, ' player: ', pl[p].id, ' carta: ', deckList[cIdx], ' cartas no deck antes de tirar essa: ', deckList.length);
             pl[p].cartas.push(deckList[cIdx]);
+            d[deckList[cIdx].id].inDeck = false;
+            d[deckList[cIdx].id].userId = pl[p].id;
             deckList.splice(cIdx, 1);
         }
     };
-    for (let i = 0; i < 2; i++) {
-        let cIdx = pickOne((deckList.length - 1));
+    console.log("mão dos players: ", pl);
+
+
+    for (let i = 0; i < 3; i++) {
+        let cIdx = pickOne(deckList.length - 1);
+        console.log('mesa: cIdx:', cIdx, ' carta: ', deckList[cIdx], ' cartas no deck antes de tirar essa: ', deckList.length);
         mesa.push(deckList[cIdx]);
-        d[deckList.indexOf(deckList[cIdx])].inTable = true;
+        d[deckList[cIdx].id].inDeck = false;
+        d[deckList[cIdx].id].inTable = true;
         deckList.splice(cIdx, 1);
     };
-
-    return d, pl, mesa;
+    console.log("mesa: ", mesa);
 };
 
 let cards = {
@@ -156,16 +162,13 @@ let players = {
         cartas: []
     },
     gabriel: {
-        id: 'leo',
+        id: 'gabriel',
         cartas: []
     },
     thuany: {
-        id: 'leo',
+        id: 'thuany',
         cartas: []
     }
 };
 
-let deckCards, pCards, mesa = darCartas(cards, players);
-
-//console.log(darCartas(cards, leo, joao, gabriel, thuany));
-console.log("cartas do baralho: ", deckCards, " cartas dos players: ", pCards, " cartas da mesa: ", mesa);
+darCartas(cards, players);
