@@ -7,6 +7,8 @@ for(let i = 0; i < 52; i++){
     };
 };
 
+function darCartas() {
 
+}
 
 console.log(baralho);
