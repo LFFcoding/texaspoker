@@ -60,6 +60,7 @@ class PokerTable {
                         break
                 };
                 deck.push({
+                    id: deck.length,
                     inDeck: true,
                     inTable: false,
                     playerId: null,
@@ -73,7 +74,12 @@ class PokerTable {
         this.players = room.players;
         this.isInRound = false;
         this.deck = deck;
+        this.inTable = [];
     };
+    pickOne(max) {
+        let one = Math.floor(Math.random() * (max - 1));
+        return one;
+    }
     getDeck(){
         return this.deck;
     }
@@ -88,8 +94,27 @@ class PokerTable {
     }
     startRound(){
         this.isInRound = true;
-        
     }
+    darCartas() {
+        for (p in this.players) {
+            for (let i = 0; i < 2; i++) {
+                let cIdx = this.pickOne(this.deck.length - 1);
+                console.log('cIdx:', cIdx, ' player: ', this.players[p].id, ' carta: ', this.deck[cIdx].cardName, ' cartas no deck antes de tirar essa: ', this.deck.length);
+                this.deck[cIdx].inDeck = false;
+                this.deck[cIdx].playerId = this.players[p].id;
+                this.players[p].cartas.push(this.deck[cIdx]);
+                this.deck.splice(cIdx, 1);
+            };
+        };
+        for (let i = 0; i < 5; i++) {
+            let cIdx = this.pickOne(this.deck.length - 1);
+            console.log('carta na mesa: cIdx:', cIdx, ' carta: ', this.deck[cIdx].cardName, ' cartas no deck antes de tirar essa: ', this.deck.length);
+            this.deck[cIdx].inDeck = false;
+            this.deck[cIdx].inTable = true;
+            this.inTable.push(this.deck[cIdx]);
+            this.deck.splice(cIdx, 1);
+        };
+    };
 };
 
 export default PokerTable;
