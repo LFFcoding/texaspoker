@@ -177,20 +177,27 @@ class PokerTable {
                     //console.log(allCardsList[this.players[p].id], ' ', this.players[p].id, 'fez flush!');
                     fizeramFlush.push(this.players[p].id);
                     fezFlush = true;
-                    let idList = [];
-                    for (let j = 0; j < 7; j++) {
-                        idList.push(allCardsList[this.players[p].id][j].id);
-                    };
-                    let sortedCl = idList.sort((a, b) => a - b);
-                    let jaTem = false;
-                    combinations.map((c) => {
-                        if (c === sortedCl) {
-                            jaTem = true;
-                        };
-                    });
-                    if (jaTem == false) {
-                        combinations.push(sortedCl);
-                    };
+
+                    let straightFlush = [];
+                    for (let)
+
+
+
+
+                    //let idList = [];
+                    //for (let j = 0; j < 7; j++) {
+                    //    idList.push(allCardsList[this.players[p].id][j].id);
+                    //};
+                    //let sortedCl = idList.sort((a, b) => a - b);
+                    //let jaTem = false;
+                    //combinations.map((c) => {
+                    //    if (c === sortedCl) {
+                    //        jaTem = true;
+                    //    };
+                    //});
+                    //if (jaTem == false) {
+                    //    combinations.push(sortedCl);
+                    //};
                 };
             };
         };
@@ -198,6 +205,7 @@ class PokerTable {
 };
 
 let fezFlush = false;
+let fizeramStraightFlush = [];
 let fizeramFlush = [];
 
 let room = {
