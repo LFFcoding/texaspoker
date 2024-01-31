@@ -102,14 +102,19 @@ class PokerTable {
         }
         this.inTable = [];
         this.deck = deck;
-        let data = JSON.stringify(this.deck, null, 2);
-        fs.writeFile('deck.json', data, 'utf8', (err) => {
-            if (err) {
-                console.error('Erro ao escrever arquivo:', err);
-            } else {
-                console.log('Deck salvo com sucesso em deck.json');
-            }
-        });
+
+
+
+        //salva o deck em JSON
+        //let data = JSON.stringify(this.deck, null, 2);
+        //fs.writeFile('deck.json', data, 'utf8', (err) => {
+        //    if (err) {
+        //        console.error('Erro ao escrever arquivo:', err);
+        //    } else {
+        //        console.log('Deck salvo com sucesso em deck.json');
+        //    }
+        //});
+
     };
     testeDeck() {
         for (let i = 0; i < this.deck.length; i++) {
@@ -134,6 +139,30 @@ class PokerTable {
             this.deck.splice(cIdx, 1);
         };
         let allCardsList = {};
+
+        //for (let p in this.players) {
+        //    let pCardList = this.inTable.concat(this.players[p].cartas);
+        //    allCardsList[`${this.players[p].id}`] = pCardList;
+        //};
+        //for (let cl in allCardsList) {
+        //    let idList = [];
+        //    for (let i = 0; i < 7; i++) {
+        //        idList.push(allCardsList[cl][i].id);
+        //    };
+        //    let sortedCl = idList.sort((a, b) => a - b);
+        //    let jaTem = false;
+        //    combinations.map((c) => {
+        //        if (c === sortedCl) {
+        //            jaTem = true;
+        //        };
+        //    });
+        //    if (jaTem == false) {
+        //        combinations.push(sortedCl);
+        //    };
+        //};
+
+
+        //verifica flush
         for (let p in this.players) {
             let pCardList = this.inTable.concat(this.players[p].cartas);
             allCardsList[`${this.players[p].id}`] = pCardList;
@@ -145,9 +174,23 @@ class PokerTable {
                     };
                 });
                 if (flush.length >= 5) {
-                    console.log(allCardsList[this.players[p].id], ' ', this.players[p].id, 'fez flush!');
+                    //console.log(allCardsList[this.players[p].id], ' ', this.players[p].id, 'fez flush!');
                     fizeramFlush.push(this.players[p].id);
                     fezFlush = true;
+                    let idList = [];
+                    for (let j = 0; j < 7; j++) {
+                        idList.push(allCardsList[this.players[p].id][j].id);
+                    };
+                    let sortedCl = idList.sort((a, b) => a - b);
+                    let jaTem = false;
+                    combinations.map((c) => {
+                        if (c === sortedCl) {
+                            jaTem = true;
+                        };
+                    });
+                    if (jaTem == false) {
+                        combinations.push(sortedCl);
+                    };
                 };
             };
         };
@@ -180,19 +223,38 @@ let room = {
 
 const table = new PokerTable(room);
 //table.testeDeck();
-
+let combinations = [];
 let count = 0
-while (fezFlush == false) {
+while (count < 1001) {
     table.gerarDeck();
     table.darCartas();
     count = Number(count + 1);
 };
+combinations.sort((a, b) => a - b);
+let data = JSON.stringify(combinations, null, 2);
+fs.writeFile('combinations.json', data, 'utf8', (err) => {
+    if (err) {
+        console.error('Erro ao escrever arquivo:', err);
+    } else {
+        console.log('combinations salvo com sucesso em combinations.json');
+    }
+});
+console.log('Combinações encontradas: ', combinations.length);
 
-//table.gerarDeck();
-//table.darCartas();
 
-if (fezFlush == true) {
-    console.log('Rodadas até fazer flush: ', count);
-} else {
-    console.log('Fez porra de flush nenhum :(');
-};
+
+
+//while (fezFlush == false) {
+//    table.gerarDeck();
+//    table.darCartas();
+//    count = Number(count + 1);
+//};
+
+table.gerarDeck();
+table.darCartas();
+
+//if (fezFlush == true) {
+//    console.log('Rodadas até fazer flush: ', count);
+//} else {
+//    console.log('Fez porra de flush nenhum :(');
+//};
