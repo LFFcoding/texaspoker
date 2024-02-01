@@ -1,0 +1,312 @@
+[
+  [
+    {
+      "cardName": "10 de paus.",
+      "id": 8,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 8,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "10 de espadas.",
+      "id": 21,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 8,
+      "cardNaipe": 1
+    },
+    {
+      "cardName": "Dama de espadas.",
+      "id": 23,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 10,
+      "cardNaipe": 1
+    },
+    {
+      "cardName": "8 de ouro.",
+      "id": 45,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 6,
+      "cardNaipe": 3
+    },
+    {
+      "cardName": "8 de espadas.",
+      "id": 19,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 6,
+      "cardNaipe": 1
+    }
+  ],
+  {
+    "Leo": [
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "10 de espadas.",
+        "id": 21,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Dama de espadas.",
+        "id": 23,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 10,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de ouro.",
+        "id": 45,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "5 de espadas.",
+        "id": 16,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 3,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de copas.",
+        "id": 32,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 6,
+        "cardNaipe": 2
+      }
+    ],
+    "Guilherme": [
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "10 de espadas.",
+        "id": 21,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Dama de espadas.",
+        "id": 23,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 10,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de ouro.",
+        "id": 45,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "8 de paus.",
+        "id": 6,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 6,
+        "cardNaipe": 0
+      }
+    ],
+    "Gabriel": [
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "10 de espadas.",
+        "id": 21,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Dama de espadas.",
+        "id": 23,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 10,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de ouro.",
+        "id": 45,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "7 de ouro.",
+        "id": 44,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 5,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "5 de ouro.",
+        "id": 42,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 3,
+        "cardNaipe": 3
+      }
+    ],
+    "Thuany": [
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "10 de espadas.",
+        "id": 21,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Dama de espadas.",
+        "id": 23,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 10,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de ouro.",
+        "id": 45,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "9 de espadas.",
+        "id": 20,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 7,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Valete de espadas.",
+        "id": 22,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 9,
+        "cardNaipe": 1
+      }
+    ]
+  },
+  "Thuany"
+]

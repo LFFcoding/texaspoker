@@ -179,7 +179,27 @@ class PokerTable {
                     fezFlush = true;
 
                     let straightFlush = [];
-                    for (let)
+                    for (let i = 0; i < flush.length; i++) {
+                        straightFlush.push(flush[i].cardNumber);
+                    };
+                    straightFlush.sort((a, b) => a - b);
+
+                    // Percorra a lista de cartas e verifique se há uma sequência de 5 ou mais cartas consecutivas
+                    for (let i = 0; i <= straightFlush.length - 5; i++) {
+                        let sequenciaEncontrada = true;
+                        for (let j = i; j < i + 4; j++) {
+                            if (straightFlush[j + 1] - straightFlush[j] !== 1) {
+                                sequenciaEncontrada = false;
+                                break;
+                            }
+                        }
+                        if (sequenciaEncontrada) {
+                            fezStraightFlush = true;
+                            fizeramStraightFlush.push(this.inTable);
+                            fizeramStraightFlush.push(allCardsList);
+                            fizeramStraightFlush.push(this.players[p].id); // Sequência de 5 ou mais cartas encontrada
+                        };
+                    };
 
 
 
@@ -205,6 +225,7 @@ class PokerTable {
 };
 
 let fezFlush = false;
+let fezStraightFlush = false;
 let fizeramStraightFlush = [];
 let fizeramFlush = [];
 
@@ -231,38 +252,40 @@ let room = {
 
 const table = new PokerTable(room);
 //table.testeDeck();
-let combinations = [];
+//let combinations = [];
 let count = 0
-while (count < 1001) {
+/*while (count < 1001) {
     table.gerarDeck();
     table.darCartas();
     count = Number(count + 1);
 };
-combinations.sort((a, b) => a - b);
-let data = JSON.stringify(combinations, null, 2);
-fs.writeFile('combinations.json', data, 'utf8', (err) => {
-    if (err) {
-        console.error('Erro ao escrever arquivo:', err);
-    } else {
-        console.log('combinations salvo com sucesso em combinations.json');
-    }
-});
-console.log('Combinações encontradas: ', combinations.length);
+combinations.sort((a, b) => a - b);*/
 
 
 
 
-//while (fezFlush == false) {
-//    table.gerarDeck();
-//    table.darCartas();
-//    count = Number(count + 1);
-//};
 
-table.gerarDeck();
-table.darCartas();
+while (fezStraightFlush == false) {
+    table.gerarDeck();
+    table.darCartas();
+    count = Number(count + 1);
+    console.log(count);
+};
 
-//if (fezFlush == true) {
-//    console.log('Rodadas até fazer flush: ', count);
-//} else {
-//    console.log('Fez porra de flush nenhum :(');
-//};
+//table.gerarDeck();
+//table.darCartas();
+
+if (fezStraightFlush == true) {
+    let data = JSON.stringify(fizeramStraightFlush, null, 2);
+    fs.writeFile('fizeramStraightFlush.json', data, 'utf8', (err) => {
+        if (err) {
+            console.error('Erro ao escrever arquivo:', err);
+        } else {
+            console.log('fizeramStraightFlush salvo com sucesso em fizeramStraightFlush.json');
+        }
+    });
+    console.log(fizeramStraightFlush, 'fizeram sFlush');
+    console.log('Rodadas até fazer sFlush: ', count);
+} else {
+    console.log('Fez porra de flush nenhum :(');
+};
