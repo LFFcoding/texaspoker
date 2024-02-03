@@ -103,8 +103,6 @@ class PokerTable {
         this.inTable = [];
         this.deck = deck;
 
-
-
         //salva o deck em JSON
         //let data = JSON.stringify(this.deck, null, 2);
         //fs.writeFile('deck.json', data, 'utf8', (err) => {
@@ -139,7 +137,6 @@ class PokerTable {
             this.deck.splice(cIdx, 1);
         };
         let allCardsList = {};
-
         //for (let p in this.players) {
         //    let pCardList = this.inTable.concat(this.players[p].cartas);
         //    allCardsList[`${this.players[p].id}`] = pCardList;
@@ -161,11 +158,12 @@ class PokerTable {
         //    };
         //};
 
-
-        //verifica flush
+        //loop para a combinação de cartas da mesa com as cartas de cada jogador;
         for (let p in this.players) {
             let pCardList = this.inTable.concat(this.players[p].cartas);
             allCardsList[`${this.players[p].id}`] = pCardList;
+
+            //verifica se tem flush;
             for (let i = 0; i < 4; i++) {
                 let flush = [];
                 allCardsList[this.players[p].id].map((card) => {
@@ -178,6 +176,7 @@ class PokerTable {
                     fizeramFlush.push(this.players[p].id);
                     fezFlush = true;
 
+                    //verifica se tem straightFlush;
                     let straightFlush = [];
                     for (let i = 0; i < flush.length; i++) {
                         straightFlush.push(flush[i].cardNumber);
@@ -201,9 +200,6 @@ class PokerTable {
                         };
                     };
 
-
-
-
                     //let idList = [];
                     //for (let j = 0; j < 7; j++) {
                     //    idList.push(allCardsList[this.players[p].id][j].id);
@@ -220,14 +216,56 @@ class PokerTable {
                     //};
                 };
             };
+            //if (fezStraightFlush == false) {
+            //verifica quadra;
+            let quadra = allCardsList[this.players[p].id].map((card) => {
+                return card.cardNumber;
+            });
+            fezQuadra = this.verificaRepeticoes(quadra, 4);
+            if (fezQuadra == true) {
+                fizeramQuadra.push(this.players[p].id);
+                fizeramQuadra.push(allCardsList);
+            };
+            //};
         };
     };
+    verificaRepeticoes(lista, quantidade) {
+        // Criar um objeto de contagem para contar quantas vezes cada item aparece na lista
+        let contagem = {};
+
+        // Contar quantas vezes cada item aparece na lista
+        for (let item of lista) {
+            contagem[item] = (contagem[item] || 0) + 1;
+        }
+
+        // Verificar se alguma das contagens é maior ou igual a 4
+        for (let chave in contagem) {
+            if (contagem[chave] >= quantidade) {
+                return true; // Repetição de 4 ou mais vezes encontrada
+            }
+        }
+
+        return false; // Nenhuma repetição de 4 ou mais vezes encontrada
+    }
 };
 
-let fezFlush = false;
-let fezStraightFlush = false;
+let fezStraightFlush = false; //verificado;
+let fezQuadra = false; //
+let fezFullHouse = false;
+let fezFlush = false; //verificado;
+let fezStraight = false;
+let fezTrinca = false;
+let fezDoisPares = false;
+let fezPar = false;
+
 let fizeramStraightFlush = [];
+let fizeramQuadra = [];
+let fizeramFullHouse = [];
 let fizeramFlush = [];
+let fizeramStraight = [];
+let fizeramTrinca = [];
+let fizeramDoisPares = [];
+let fizeramPar = [];
 
 let room = {
     players: {
@@ -261,11 +299,7 @@ let count = 0
 };
 combinations.sort((a, b) => a - b);*/
 
-
-
-
-
-while (fezStraightFlush == false) {
+while (fezQuadra == false) {
     table.gerarDeck();
     table.darCartas();
     count = Number(count + 1);
@@ -275,17 +309,17 @@ while (fezStraightFlush == false) {
 //table.gerarDeck();
 //table.darCartas();
 
-if (fezStraightFlush == true) {
-    let data = JSON.stringify(fizeramStraightFlush, null, 2);
-    fs.writeFile('fizeramStraightFlush.json', data, 'utf8', (err) => {
+if (fezQuadra == true) {
+    let data = JSON.stringify(fizeramQuadra, null, 2);
+    fs.writeFile('fizeramQuadra.json', data, 'utf8', (err) => {
         if (err) {
             console.error('Erro ao escrever arquivo:', err);
         } else {
-            console.log('fizeramStraightFlush salvo com sucesso em fizeramStraightFlush.json');
+            console.log('fizeramQuadra salvo com sucesso em fizeramQuadra.json');
         }
     });
-    console.log(fizeramStraightFlush, 'fizeram sFlush');
-    console.log('Rodadas até fazer sFlush: ', count);
+    console.log(fizeramQuadra, 'fizeram fezQuadra');
+    console.log('Rodadas até fazer fizeramQuadra: ', count);
 } else {
-    console.log('Fez porra de flush nenhum :(');
+    console.log('Fez porra de fizeramQuadra nenhum :(');
 };
