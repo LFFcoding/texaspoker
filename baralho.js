@@ -216,17 +216,23 @@ class PokerTable {
                     //};
                 };
             };
+            //se não fezStraightFlush, vê se fez quadra;
             //if (fezStraightFlush == false) {
             //verifica quadra;
-            let quadra = allCardsList[this.players[p].id].map((card) => {
+            let cardNumbers = allCardsList[this.players[p].id].map((card) => {
                 return card.cardNumber;
-            });
-            fezQuadra = this.verificaRepeticoes(quadra, 4);
-            if (fezQuadra == true) {
-                fizeramQuadra.push(this.players[p].id);
-                fizeramQuadra.push(allCardsList);
-            };
+            }); // retorna somente os numeros das cartas de cada mesa+mão;
+            fezQuadra = this.verificaRepeticoes(cardNumbers, 4);
+            //if (fezQuadra == true) {
+            //    fizeramQuadra.push(this.players[p].id);
+            //    fizeramQuadra.push(allCardsList);
             //};
+            //}; //se não fezQuadra, vê se fez fullHouse;
+            fezFullHouse = this.verificaFullHouse(cardNumbers);
+            if (fezFullHouse == true) {
+                fizeramFullHouse.push(this.players[p].id);
+                fizeramFullHouse.push(allCardsList);
+            };
         };
     };
     verificaRepeticoes(lista, quantidade) {
@@ -243,6 +249,35 @@ class PokerTable {
             if (contagem[chave] >= quantidade) {
                 return true; // Repetição de 4 ou mais vezes encontrada
             }
+        }
+
+        return false; // Nenhuma repetição de 4 ou mais vezes encontrada
+    }
+    verificaFullHouse(lista) {
+        // Criar um objeto de contagem para contar quantas vezes cada item aparece na lista
+        let contagem = {};
+        let fezTrincaNoFull = false;
+
+        // Contar quantas vezes cada item aparece na lista
+        for (let item of lista) {
+            contagem[item] = (contagem[item] || 0) + 1;
+        }
+
+        // Verificar se alguma das contagens é maior ou igual a 4
+        for (let chave in contagem) {
+            if (contagem[chave] >= 3) {
+                fezTrincaNoFull = true;
+                for (let it in lista) {
+                    if (lista[it] == chave) {
+                        lista.splice(lista.indexOf(lista[it]), 1);
+                    }
+                }//trinca encontrada e retirada da lista
+                break;
+            }
+        }
+        let fezDuplaDoFull = this.verificaRepeticoes(lista, 2);
+        if (fezTrincaNoFull && fezDuplaDoFull) {
+            return true;
         }
 
         return false; // Nenhuma repetição de 4 ou mais vezes encontrada
@@ -299,7 +334,7 @@ let count = 0
 };
 combinations.sort((a, b) => a - b);*/
 
-while (fezQuadra == false) {
+while (fezFullHouse == false) {
     table.gerarDeck();
     table.darCartas();
     count = Number(count + 1);
@@ -309,17 +344,17 @@ while (fezQuadra == false) {
 //table.gerarDeck();
 //table.darCartas();
 
-if (fezQuadra == true) {
-    let data = JSON.stringify(fizeramQuadra, null, 2);
-    fs.writeFile('fizeramQuadra.json', data, 'utf8', (err) => {
+if (fezFullHouse == true) {
+    let data = JSON.stringify(fizeramFullHouse, null, 2);
+    fs.writeFile('fizeramFullHouse.json', data, 'utf8', (err) => {
         if (err) {
             console.error('Erro ao escrever arquivo:', err);
         } else {
-            console.log('fizeramQuadra salvo com sucesso em fizeramQuadra.json');
+            console.log('fizeramFullHouse salvo com sucesso em fizeramFullHouse.json');
         }
     });
-    console.log(fizeramQuadra, 'fizeram fezQuadra');
-    console.log('Rodadas até fazer fizeramQuadra: ', count);
+    console.log(fizeramFullHouse, 'fizeram fezFullHouse');
+    console.log('Rodadas até fazer fezFullHouse: ', count);
 } else {
-    console.log('Fez porra de fizeramQuadra nenhum :(');
+    console.log('Fez porra de fezFullHouse nenhum :(');
 };
