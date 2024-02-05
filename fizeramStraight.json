@@ -1,0 +1,932 @@
+[
+  [
+    {
+      "cardName": "Ás de copas.",
+      "id": 38,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 12,
+      "cardNaipe": 2
+    },
+    {
+      "cardName": "3 de paus.",
+      "id": 1,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 1,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "6 de copas.",
+      "id": 30,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 4,
+      "cardNaipe": 2
+    },
+    {
+      "cardName": "Valete de paus.",
+      "id": 9,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 9,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "4 de ouro.",
+      "id": 41,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 2,
+      "cardNaipe": 3
+    }
+  ],
+  "Leo",
+  {
+    "Leo": [
+      {
+        "cardName": "Ás de copas.",
+        "id": 38,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 12,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "3 de paus.",
+        "id": 1,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "6 de copas.",
+        "id": 30,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "2 de espadas.",
+        "id": 13,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 0,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "5 de ouro.",
+        "id": 42,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 3,
+        "cardNaipe": 3
+      }
+    ],
+    "Guilherme": [
+      {
+        "cardName": "Ás de copas.",
+        "id": 38,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 12,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "3 de paus.",
+        "id": 1,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "6 de copas.",
+        "id": 30,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "Dama de ouro.",
+        "id": 49,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 10,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 6,
+        "cardNaipe": 1
+      }
+    ],
+    "Gabriel": [
+      {
+        "cardName": "Ás de copas.",
+        "id": 38,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 12,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "3 de paus.",
+        "id": 1,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "6 de copas.",
+        "id": 30,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "6 de espadas.",
+        "id": 17,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 4,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Valete de ouro.",
+        "id": 48,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 9,
+        "cardNaipe": 3
+      }
+    ],
+    "Thuany": [
+      {
+        "cardName": "Ás de copas.",
+        "id": 38,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 12,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "3 de paus.",
+        "id": 1,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "6 de copas.",
+        "id": 30,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "Valete de copas.",
+        "id": 35,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 9,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "4 de paus.",
+        "id": 2,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 2,
+        "cardNaipe": 0
+      }
+    ]
+  },
+  [
+    {
+      "cardName": "5 de paus.",
+      "id": 3,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 3,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "Rei de paus.",
+      "id": 11,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 11,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "3 de copas.",
+      "id": 27,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 1,
+      "cardNaipe": 2
+    },
+    {
+      "cardName": "6 de espadas.",
+      "id": 17,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 4,
+      "cardNaipe": 1
+    },
+    {
+      "cardName": "4 de ouro.",
+      "id": 41,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 2,
+      "cardNaipe": 3
+    }
+  ],
+  "Guilherme",
+  {
+    "Leo": [
+      {
+        "cardName": "5 de paus.",
+        "id": 3,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 3,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de paus.",
+        "id": 11,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "3 de copas.",
+        "id": 27,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "6 de espadas.",
+        "id": 17,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "5 de ouro.",
+        "id": 42,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 3,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "9 de copas.",
+        "id": 33,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 7,
+        "cardNaipe": 2
+      }
+    ],
+    "Guilherme": [
+      {
+        "cardName": "5 de paus.",
+        "id": 3,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 3,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de paus.",
+        "id": 11,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "3 de copas.",
+        "id": 27,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "6 de espadas.",
+        "id": 17,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "7 de copas.",
+        "id": 31,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 5,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "8 de ouro.",
+        "id": 45,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 6,
+        "cardNaipe": 3
+      }
+    ],
+    "Gabriel": [
+      {
+        "cardName": "5 de paus.",
+        "id": 3,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 3,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de paus.",
+        "id": 11,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "3 de copas.",
+        "id": 27,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "6 de espadas.",
+        "id": 17,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "Valete de paus.",
+        "id": 9,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 9,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de espadas.",
+        "id": 24,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 11,
+        "cardNaipe": 1
+      }
+    ],
+    "Thuany": [
+      {
+        "cardName": "5 de paus.",
+        "id": 3,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 3,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de paus.",
+        "id": 11,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "3 de copas.",
+        "id": 27,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 1,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "6 de espadas.",
+        "id": 17,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 4,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de copas.",
+        "id": 32,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 6,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "10 de espadas.",
+        "id": 21,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 8,
+        "cardNaipe": 1
+      }
+    ]
+  },
+  [
+    {
+      "cardName": "4 de ouro.",
+      "id": 41,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 2,
+      "cardNaipe": 3
+    },
+    {
+      "cardName": "8 de espadas.",
+      "id": 19,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 6,
+      "cardNaipe": 1
+    },
+    {
+      "cardName": "10 de paus.",
+      "id": 8,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 8,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "9 de paus.",
+      "id": 7,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 7,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "Rei de espadas.",
+      "id": 24,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 11,
+      "cardNaipe": 1
+    }
+  ],
+  "Thuany",
+  {
+    "Leo": [
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "9 de paus.",
+        "id": 7,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 7,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de espadas.",
+        "id": 24,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "4 de espadas.",
+        "id": 15,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 2,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "9 de ouro.",
+        "id": 46,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Leo",
+        "cardNumber": 7,
+        "cardNaipe": 3
+      }
+    ],
+    "Guilherme": [
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "9 de paus.",
+        "id": 7,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 7,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de espadas.",
+        "id": 24,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "8 de paus.",
+        "id": 6,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 6,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "6 de ouro.",
+        "id": 43,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Guilherme",
+        "cardNumber": 4,
+        "cardNaipe": 3
+      }
+    ],
+    "Gabriel": [
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "9 de paus.",
+        "id": 7,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 7,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de espadas.",
+        "id": 24,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "7 de paus.",
+        "id": 5,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 5,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "4 de copas.",
+        "id": 28,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Gabriel",
+        "cardNumber": 2,
+        "cardNaipe": 2
+      }
+    ],
+    "Thuany": [
+      {
+        "cardName": "4 de ouro.",
+        "id": 41,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 2,
+        "cardNaipe": 3
+      },
+      {
+        "cardName": "8 de espadas.",
+        "id": 19,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 6,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "10 de paus.",
+        "id": 8,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 8,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "9 de paus.",
+        "id": 7,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 7,
+        "cardNaipe": 0
+      },
+      {
+        "cardName": "Rei de espadas.",
+        "id": 24,
+        "inDeck": false,
+        "inTable": true,
+        "playerId": null,
+        "cardNumber": 11,
+        "cardNaipe": 1
+      },
+      {
+        "cardName": "Valete de copas.",
+        "id": 35,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 9,
+        "cardNaipe": 2
+      },
+      {
+        "cardName": "7 de espadas.",
+        "id": 18,
+        "inDeck": false,
+        "inTable": false,
+        "playerId": "Thuany",
+        "cardNumber": 5,
+        "cardNaipe": 1
+      }
+    ]
+  }
+]

@@ -1,4 +1,16 @@
 const fs = require('fs');
+
+async function salve(obj, name) {
+
+    let data = JSON.stringify(obj, null, 2);
+    fs.writeFile(`${name}.json`, data, 'utf8', (err) => {
+        if (err) {
+            console.error('Erro ao escrever arquivo:', err);
+        } else {
+            console.log(`${name} salvo com sucesso em ${name}.json`);
+        }
+    });
+}
 class PokerTable {
     constructor(room) {
         this.room = room;
@@ -26,7 +38,7 @@ class PokerTable {
     startRound() {
         this.isInRound = true;
     }
-    gerarDeck() {
+    async gerarDeck() {
         let deck = [];
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j < 13; j++) {
@@ -119,7 +131,7 @@ class PokerTable {
             console.log('id da carta: ', this.deck[i].id, ' nome da Carta: ', this.deck[i].cardName);
         };
     };
-    darCartas() {
+    async darCartas() {
         for (let p in this.players) {
             for (let i = 0; i < 2; i++) {
                 let cIdx = this.pickOne(this.deck.length - 1);
@@ -181,24 +193,11 @@ class PokerTable {
                     for (let i = 0; i < flush.length; i++) {
                         straightFlush.push(flush[i].cardNumber);
                     };
-                    straightFlush.sort((a, b) => a - b);
-
-                    // Percorra a lista de cartas e verifique se há uma sequência de 5 ou mais cartas consecutivas
-                    for (let i = 0; i <= straightFlush.length - 5; i++) {
-                        let sequenciaEncontrada = true;
-                        for (let j = i; j < i + 4; j++) {
-                            if (straightFlush[j + 1] - straightFlush[j] !== 1) {
-                                sequenciaEncontrada = false;
-                                break;
-                            }
-                        }
-                        if (sequenciaEncontrada) {
-                            fezStraightFlush = true;
-                            fizeramStraightFlush.push(this.inTable);
-                            fizeramStraightFlush.push(allCardsList);
-                            fizeramStraightFlush.push(this.players[p].id); // Sequência de 5 ou mais cartas encontrada
-                        };
-                    };
+                    fezStraightFlush = this.verificaStraight(straightFlush);
+                    if (fezStraightFlush === true) {
+                        fizeramStraightFlush.push(this.players[p].id);
+                        fizeramStraightFlush.push(allCardsList);
+                    }
 
                     //let idList = [];
                     //for (let j = 0; j < 7; j++) {
@@ -222,16 +221,23 @@ class PokerTable {
             let cardNumbers = allCardsList[this.players[p].id].map((card) => {
                 return card.cardNumber;
             }); // retorna somente os numeros das cartas de cada mesa+mão;
-            fezQuadra = this.verificaRepeticoes(cardNumbers, 4);
+            //fezQuadra = this.verificaRepeticoes(cardNumbers, 4);
             //if (fezQuadra == true) {
             //    fizeramQuadra.push(this.players[p].id);
             //    fizeramQuadra.push(allCardsList);
             //};
             //}; //se não fezQuadra, vê se fez fullHouse;
-            fezFullHouse = this.verificaFullHouse(cardNumbers);
-            if (fezFullHouse == true) {
-                fizeramFullHouse.push(this.players[p].id);
-                fizeramFullHouse.push(allCardsList);
+            //fezFullHouse = this.verificaFullHouse(cardNumbers);
+            //if (fezFullHouse == true) {
+            //    fizeramFullHouse.push(this.players[p].id);
+            //    fizeramFullHouse.push(allCardsList);
+            //};
+            fezStraight = this.verificaStraight(cardNumbers);
+            if (fezStraight === true) {
+                fezStraight = true;
+                fizeramStraight.push(this.inTable);
+                fizeramStraight.push(this.players[p].id);
+                fizeramStraight.push(allCardsList);
             };
         };
     };
@@ -282,13 +288,34 @@ class PokerTable {
 
         return false; // Nenhuma repetição de 4 ou mais vezes encontrada
     }
+    verificaStraight(listaCardNumbers) {
+        // Ordenar o array para garantir que os números estejam em ordem crescente
+        listaCardNumbers.sort((a, b) => a - b);
+        let lista = listaCardNumbers.filter((numero, index) => listaCardNumbers.indexOf(numero) === index);
+        lista.sort((a, b) => a - b);
+
+        // Percorra a lista de cartas e verifique se há uma sequência de 5 ou mais cartas consecutivas
+        for (let i = 0; i <= lista.length - 5; i++) {
+            let sequenciaEncontrada = true;
+            for (let j = i; j < i + 4; j++) {
+                if (lista[j + 1] - lista[j] !== 1) {
+                    sequenciaEncontrada = false;
+                    break;
+                }
+            }
+            if (sequenciaEncontrada) {
+                return true;
+            }
+        }
+        return false; // Nenhuma sequência de 5 números consecutivos encontrada
+    }
 };
 
 let fezStraightFlush = false; //verificado;
-let fezQuadra = false; //
-let fezFullHouse = false;
+let fezQuadra = false; //verificado;
+let fezFullHouse = false; //verificado;
 let fezFlush = false; //verificado;
-let fezStraight = false;
+let fezStraight = false; //verificado;
 let fezTrinca = false;
 let fezDoisPares = false;
 let fezPar = false;
@@ -334,27 +361,21 @@ let count = 0
 };
 combinations.sort((a, b) => a - b);*/
 
-while (fezFullHouse == false) {
+while (fezStraight == false) {
     table.gerarDeck();
     table.darCartas();
     count = Number(count + 1);
     console.log(count);
+    console.log(fezStraight);
 };
 
 //table.gerarDeck();
 //table.darCartas();
 
-if (fezFullHouse == true) {
-    let data = JSON.stringify(fizeramFullHouse, null, 2);
-    fs.writeFile('fizeramFullHouse.json', data, 'utf8', (err) => {
-        if (err) {
-            console.error('Erro ao escrever arquivo:', err);
-        } else {
-            console.log('fizeramFullHouse salvo com sucesso em fizeramFullHouse.json');
-        }
-    });
-    console.log(fizeramFullHouse, 'fizeram fezFullHouse');
-    console.log('Rodadas até fazer fezFullHouse: ', count);
+if (fezStraight == true) {
+    salve(fizeramStraight, 'fizeramStraight');
+    console.log('fizeram fizeramStraight: >>>>>>>>>', fizeramStraight);
+    console.log('Rodadas até fazer fizeramStraight: ', count);
 } else {
-    console.log('Fez porra de fezFullHouse nenhum :(');
+    console.log('Fez porra de fizeramStraight nenhum :(');
 };
