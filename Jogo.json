@@ -1,0 +1,144 @@
+{
+  "jogadores": {
+    "0": {
+      "id": "Leo",
+      "cartas": [
+        {
+          "cardName": "4 de ouro.",
+          "id": 41,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Leo",
+          "cardNumber": 2,
+          "cardNaipe": 3
+        },
+        {
+          "cardName": "Dama de paus.",
+          "id": 10,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Leo",
+          "cardNumber": 10,
+          "cardNaipe": 0
+        }
+      ]
+    },
+    "1": {
+      "id": "Guilherme",
+      "cartas": [
+        {
+          "cardName": "3 de ouro.",
+          "id": 40,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Guilherme",
+          "cardNumber": 1,
+          "cardNaipe": 3
+        },
+        {
+          "cardName": "Rei de paus.",
+          "id": 11,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Guilherme",
+          "cardNumber": 11,
+          "cardNaipe": 0
+        }
+      ]
+    },
+    "2": {
+      "id": "Gabriel",
+      "cartas": [
+        {
+          "cardName": "Ás de espadas.",
+          "id": 25,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Gabriel",
+          "cardNumber": 12,
+          "cardNaipe": 1
+        },
+        {
+          "cardName": "10 de ouro.",
+          "id": 47,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Gabriel",
+          "cardNumber": 8,
+          "cardNaipe": 3
+        }
+      ]
+    },
+    "3": {
+      "id": "Thuany",
+      "cartas": [
+        {
+          "cardName": "10 de espadas.",
+          "id": 21,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Thuany",
+          "cardNumber": 8,
+          "cardNaipe": 1
+        },
+        {
+          "cardName": "5 de ouro.",
+          "id": 42,
+          "inDeck": false,
+          "inTable": false,
+          "playerId": "Thuany",
+          "cardNumber": 3,
+          "cardNaipe": 3
+        }
+      ]
+    }
+  },
+  "mesa": [
+    {
+      "cardName": "6 de ouro.",
+      "id": 43,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 4,
+      "cardNaipe": 3
+    },
+    {
+      "cardName": "4 de paus.",
+      "id": 2,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 2,
+      "cardNaipe": 0
+    },
+    {
+      "cardName": "5 de copas.",
+      "id": 29,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 3,
+      "cardNaipe": 2
+    },
+    {
+      "cardName": "Rei de espadas.",
+      "id": 24,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 11,
+      "cardNaipe": 1
+    },
+    {
+      "cardName": "2 de copas.",
+      "id": 26,
+      "inDeck": false,
+      "inTable": true,
+      "playerId": null,
+      "cardNumber": 0,
+      "cardNaipe": 2
+    }
+  ],
+  "MM": "Gabriel"
+}

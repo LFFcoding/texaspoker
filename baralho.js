@@ -131,7 +131,8 @@ class PokerTable {
             console.log('id da carta: ', this.deck[i].id, ' nome da Carta: ', this.deck[i].cardName);
         };
     };
-    async darCartas() {
+    darCartas() {
+    //cartas aos players
         for (let p in this.players) {
             for (let i = 0; i < 2; i++) {
                 let cIdx = this.pickOne(this.deck.length - 1);
@@ -141,6 +142,7 @@ class PokerTable {
                 this.deck.splice(cIdx, 1);
             };
         };
+        //cartas na mesa
         for (let i = 0; i < 5; i++) {
             let cIdx = this.pickOne(this.deck.length - 1);
             this.deck[cIdx].inDeck = false;
@@ -149,26 +151,21 @@ class PokerTable {
             this.deck.splice(cIdx, 1);
         };
         let allCardsList = {};
-        //for (let p in this.players) {
-        //    let pCardList = this.inTable.concat(this.players[p].cartas);
-        //    allCardsList[`${this.players[p].id}`] = pCardList;
-        //};
-        //for (let cl in allCardsList) {
-        //    let idList = [];
-        //    for (let i = 0; i < 7; i++) {
-        //        idList.push(allCardsList[cl][i].id);
-        //    };
-        //    let sortedCl = idList.sort((a, b) => a - b);
-        //    let jaTem = false;
-        //    combinations.map((c) => {
-        //        if (c === sortedCl) {
-        //            jaTem = true;
-        //        };
-        //    });
-        //    if (jaTem == false) {
-        //        combinations.push(sortedCl);
-        //    };
-        //};
+        cartasJogo.jogadores = this.players;
+        cartasJogo.mesa = this.inTable;
+
+        //maior mão
+        let m = {}
+        for (let p in this.players) {
+            m[this.players[p].id] = (2 ** (this.players[p].cartas[0].cardNumber)) + (2 ** (this.players[p].cartas[1].cardNumber));
+        }
+        let maiorValor = -1
+        for (let p in m) {
+            if (m[p] > maiorValor) {
+                maiorValor = m[p]
+                maiorMao = p
+            }
+        }
 
         //loop para a combinação de cartas da mesa com as cartas de cada jogador;
         for (let p in this.players) {
@@ -231,14 +228,20 @@ class PokerTable {
             //if (fezFullHouse == true) {
             //    fizeramFullHouse.push(this.players[p].id);
             //    fizeramFullHouse.push(allCardsList);
-            //};
-            fezStraight = this.verificaStraight(cardNumbers);
-            if (fezStraight === true) {
-                fezStraight = true;
-                fizeramStraight.push(this.inTable);
-                fizeramStraight.push(this.players[p].id);
-                fizeramStraight.push(allCardsList);
-            };
+            //}; //se não fezFullHouse, vê se fez Straight;
+            //fezStraight = this.verificaStraight(cardNumbers);
+            //if (fezStraight === true) {
+            //    fezStraight = true;
+            //    fizeramStraight.push(this.inTable);
+            //    fizeramStraight.push(this.players[p].id);
+            //    fizeramStraight.push(allCardsList);
+            //}; se não fez Straight, vê se fez trinca;
+            //fezTrinca = this.verificaRepeticoes(cardNumbers, 3);
+            //se não fez Trinca, vê se fez 2 pares;
+            //fezDoisPares = this.verificaDoisPares(cardNumbers);
+            //se não fez 2 pares, vê se fez 1 par;
+            //fezPar = this.verificaRepeticoes(cardNumbers, 2);
+            //se não tem par, vê quem tem mão maior;
         };
     };
     verificaRepeticoes(lista, quantidade) {
@@ -309,8 +312,38 @@ class PokerTable {
         }
         return false; // Nenhuma sequência de 5 números consecutivos encontrada
     }
-};
+    verificaDoisPares(lista) {
+        // Criar um objeto de contagem para contar quantas vezes cada item aparece na lista
+        let contagem = {};
+        let fez1Par = false;
 
+        // Contar quantas vezes cada item aparece na lista
+        for (let item of lista) {
+            contagem[item] = (contagem[item] || 0) + 1;
+        }
+
+        // Verificar se alguma das contagens é maior ou igual a 4
+        for (let chave in contagem) {
+            if (contagem[chave] >= 2) {
+                fez1Par = true;
+                for (let it in lista) {
+                    if (lista[it] == chave) {
+                        lista.splice(lista.indexOf(lista[it]), 1);
+                    }
+                }//1par encontrado e retirado da lista
+                break;
+            }
+        }
+        let fez2par = this.verificaRepeticoes(lista, 2);
+        if (fez1Par && fez2par) {
+            return true;
+        }
+
+        return false; // não fez 2 pares
+    }
+};
+let cartasJogo = {};
+let maiorMao = ""
 let fezStraightFlush = false; //verificado;
 let fezQuadra = false; //verificado;
 let fezFullHouse = false; //verificado;
@@ -361,21 +394,22 @@ let count = 0
 };
 combinations.sort((a, b) => a - b);*/
 
-while (fezStraight == false) {
-    table.gerarDeck();
-    table.darCartas();
-    count = Number(count + 1);
-    console.log(count);
-    console.log(fezStraight);
-};
+//while (fezStraight == false) {
+//    table.gerarDeck();
+//    table.darCartas();
+//    count = Number(count + 1);
+//    console.log(count);
+//    console.log(fezStraight);
+//};
 
-//table.gerarDeck();
-//table.darCartas();
+table.gerarDeck();
+table.darCartas();
+cartasJogo.MM = maiorMao;
 
-if (fezStraight == true) {
-    salve(fizeramStraight, 'fizeramStraight');
-    console.log('fizeram fizeramStraight: >>>>>>>>>', fizeramStraight);
-    console.log('Rodadas até fazer fizeramStraight: ', count);
-} else {
-    console.log('Fez porra de fizeramStraight nenhum :(');
-};
+salve(cartasJogo, "Jogo");
+
+//if (fezStraight == true) {
+//    salve(fizeramStraight, 'fizeramStraight');
+//    console.log('fizeram fizeramStraight: >>>>>>>>>', fizeramStraight);
+//    console.log('Rodadas até fazer fizeramStraight: ', count);
+//}
